@@ -29,8 +29,38 @@
 		<script defer src="./js/index.js"></script>
 	</head>
 
-	<body>
-		<h1>Dynamic Web Duo</h1>
-		<img src="">
+	<body onload="init();">
+		<div id="loading" class="loading">
+			<img src="./resources/ui/load.svg" alt="Loading">
+			<h1>Loading</h1>
+		</div>
+
+		<nav>
+			<div>
+				<img src="./resources/org/logo_isotype.svg" alt="Dynamic Web Duo Logo" width="64px">
+				<h1>Dynamic Web Duo</h1>
+			</div>
+
+			<div>
+				<ul>
+					<li><a href="#about">Acerca de</a></li>
+					<li><a href="#services">Servicios</a></li>
+					<li><a href="#contact">Contacto</a></li>
+				</ul>
+			</div>
+		</nav>
+
+		<main>
+			<div id="presentation"></div>
+
+			<div id="about"></div>
+
+			<div id="services"></div>
+
+			<div id="contact"></div>
+
+		</main>
+
+		<footer></footer>
 	</body>
 </html>
