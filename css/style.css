@@ -8,18 +8,43 @@
 
 :root {
     /* Colors */
-    color-scheme: dark;
+    --color-font:       #fff;
+    --color-background: #000;
+    --color-primary:    #FFF;
+    --color-secondary:  #FFF;
+    --color-accent:     #FFF;
 
-    --color-main: light-dark(#ffffff, #000000);
+    /* font */
+    --font-family: "Work Sans", serif;
+    --font-weight-extra-bold: 800;
+    --font-weight-bold: 600;
+    --font-weight-normal: 400;
+    --font-weight-thin: 200;
 }
 
+
 /* animations */
-@keyframes spin {
+@keyframes loadingSpin {
     0% {
-        transform: rotate(0deg);
+        transform: rotate(0deg);    ;
+        -webkit-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+    }
+    25%{
+        transform: rotate(180deg);
+        -webkit-transform: rotate(180deg);
+        -moz-transform: rotate(180deg);
+        -ms-transform: rotate(180deg);
+        -o-transform: rotate(180deg);
     }
     100% {
         transform: rotate(360deg);
+        -webkit-transform: rotate(360deg);
+        -moz-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        -o-transform: rotate(360deg);
     }
 }
 
@@ -34,14 +59,10 @@
     }
 }
 
-/* Global */
 
-body {
-    background-color: #000;
-}
-
+/* loading screen */
 .loading {
-    background-color: #000;
+    background-color: var(--color-background);
     display: flex;
     position: absolute;
     width: 100%;
@@ -49,18 +70,27 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    user-select: none;
 }
 
 .loading img {
     width: 64px;
     height: auto;
-    margin: 20px;
-    animation: spin 1s linear infinite;
+    margin-bottom: 25px;
+    animation: loadingSpin 0.7s linear infinite;
+    -webkit-animation: loadingSpin 0.7s linear infinite;
 }
 
 .loading h1 {
-    font-family: "Work Sans", serif;
+    color: var(--color-font);
+    font-family: var(--font-family);
     font-optical-sizing: auto;
-    font-weight: 400;
+    font-weight: var(--font-weight-bold);
     font-style: normal;
+}
+
+
+/* page and containers */
+body {
+    background-color: var(--color-background);
 }
